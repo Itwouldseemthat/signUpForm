@@ -1,0 +1,48 @@
+.container {
+    border-left: 2px solid rgb(27, 80, 61);
+}
+
+.signUpForm {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+label {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.input {
+    font-size: 22px;
+    background: rgb(72, 120, 94);
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0px 1px 10px 5px rgba(34, 80, 47, 0.886) inset;
+    outline: none;
+    padding: 5px 15px 5px 15px;
+    margin-bottom: 20px;
+}
+
+.signUpBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 18px;
+    padding: 10px 40px;
+    margin-top: 20px;
+    background: rgb(34, 100, 76);
+    border: none;
+    outline: none;
+    box-shadow: 4px 4px 8px 0px rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+.signUpBtn:hover {
+    background: rgb(72, 120, 94);
+    cursor: pointer;
+}

@@ -1,8 +1,15 @@
+import React from 'react';
 import './App.css';
+import SignUpBlock from './components/SignUpBlock/SignUpBlock';
 
 function App() {
+
+
+
+
   return (
-    <div className="App">
+    <div className="app">
+      <SignUpBlock />
     </div>
   );
 }
