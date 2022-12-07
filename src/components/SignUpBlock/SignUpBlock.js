@@ -113,6 +113,10 @@ const SignUpBlock = (props) => {
             setSubmitDisabled(true);
             setIncorrectNum('incorrect number');
         }
+        if (arr[0] !== '+' && arr.length !== 0) {
+            setSubmitDisabled(true);
+            setIncorrectNum('incorrect number');
+        }
     },[signUpForm.tel])
 
 
