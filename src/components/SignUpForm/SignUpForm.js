@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import InputPassword from "../InputPassword/InputPassword";
+import InputTel from "../InputTel/InputTel";
 import './SignUpForm.css';
 
 
@@ -19,10 +20,13 @@ const SignUpForm = (props) => {
                 <label htmlFor='confirmPass'>Confirm password</label>
                 <input className='input' id='confirmPass' type="password" value={props.signUpForm.confirmPass} onChange={(e) => props.setValue(e, 'confirmPass')} />
                 <div className="underText passmatch">{props.passmatch}</div>
-                <label htmlFor='tel'>Telphone number</label>
-                <input className='input' id='tel' type="tel" value={props.signUpForm.tel} onChange={(e) => props.setValue(e, 'tel')} />
-                <div className="underText passmatch">{props.incorrectNum}</div>
+                <InputTel 
+                    signUpForm={props.signUpForm}
+                    setValue={props.setValue}
+                    incorrectNum={props.incorrectNum}
+                />
                 <button disabled={props.submitDisabled} className='signUpBtn' type='submit'>Sign Up</button>
+                <div className="underText space">{props.space}</div>
             </form>
         </div>
     )

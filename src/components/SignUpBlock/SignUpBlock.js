@@ -46,7 +46,7 @@ const SignUpBlock = (props) => {
         else if (signUpForm.password === signUpForm.confirmPass && signUpForm.password !== '') {
             setPassmatch('');
         }
-    },[signUpForm.confirmPass, signUpForm.password])
+    },[signUpForm])
 
     const [passLevel, setPassLevel] = useState({
         text: '',
@@ -119,6 +119,18 @@ const SignUpBlock = (props) => {
         }
     },[signUpForm.tel])
 
+    const [space, setSpace] = useState('')
+
+    useEffect(() => {
+        if (signUpForm.login.split('').indexOf(' ') !== -1 || 
+            signUpForm.password.split('').indexOf(' ') !== -1 ||
+            signUpForm.tel.split('').indexOf(' ') !== -1) {
+            setSubmitDisabled(true)
+            setSpace('dont use spaces')
+        }
+        else setSpace('')
+
+    },[signUpForm.login, signUpForm.password, signUpForm.tel])
 
     
     return (
@@ -132,6 +144,7 @@ const SignUpBlock = (props) => {
                     passmatch={passmatch}
                     passLevel={passLevel}
                     incorrectNum={incorrectNum}
+                    space={space}
                 />
                 <SideButtons />
             </div>
