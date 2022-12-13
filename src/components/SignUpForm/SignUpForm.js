@@ -9,9 +9,9 @@ const SignUpForm = (props) => {
 
     return (
         <div className='container'>
-            <form className='signUpForm' onSubmit={props.submitSignUp}>
+            <form className='signUpForm' onSubmit={(e) => props.submitSignUp(props.signUpForm, e)}>
                 <label htmlFor='login'>Login</label>
-                <input className='input' id='login' autoComplete='off' type="text" value={props.signUpForm.login} onChange={(e) => props.setValue(e, 'login')} />
+                <input className='input margInp' id='login' autoComplete='off' type="text" value={props.signUpForm.login} onChange={(e) => props.setValue(e, 'login')} />
                 <InputPassword
                     signUpForm={props.signUpForm}
                     setValue={props.setValue}

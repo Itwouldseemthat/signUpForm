@@ -4,7 +4,7 @@ import './SideButtons.css';
 const SideButtons = (props) => {
     return (
         <div className='sideBtnsWrapper'>
-            <button className='sideBtn'>Back</button>
+            <button className='sideBtn' onClick={props.clickSignIn}>Back</button>
         </div>
     )
 }

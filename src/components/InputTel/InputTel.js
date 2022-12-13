@@ -18,9 +18,10 @@ const InputTel = (props) => {
             <label htmlFor='tel'>Telphone number</label>
             <input 
                 className='input' 
-                placeholder="+000 00 000 00 00" 
+                placeholder="+375 00 000 00 00" 
                 id='tel' 
                 type="tel" 
+                autoComplete="off"
                 value={props.signUpForm.tel} 
                 onChange={(e) => props.setValue(e, 'tel')} 
             />

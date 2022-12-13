@@ -19,10 +19,6 @@ const SignUpBlock = (props) => {
           ...signUpForm
         })
     }
-      
-    function submitSignUp() {
-        console.log('submit')
-    }
 
     const [submitDisabled, setSubmitDisabled] = useState(true)
 
@@ -117,6 +113,12 @@ const SignUpBlock = (props) => {
             setSubmitDisabled(true);
             setIncorrectNum('incorrect number');
         }
+        props.dataAccounts.forEach(item => {
+            if (item.tel === signUpForm.tel) {
+                setSubmitDisabled(true);
+                setIncorrectNum('this number is already being used');
+            }
+        })
     },[signUpForm.tel])
 
     const [space, setSpace] = useState('')
@@ -139,14 +141,14 @@ const SignUpBlock = (props) => {
                 <SignUpForm 
                     submitDisabled={submitDisabled}
                     signUpForm={signUpForm}
-                    submitSignUp={submitSignUp}
+                    submitSignUp={props.submitSignUp}
                     setValue={setValue}
                     passmatch={passmatch}
                     passLevel={passLevel}
                     incorrectNum={incorrectNum}
                     space={space}
                 />
-                <SideButtons />
+                <SideButtons clickSignIn={props.clickSignIn}/>
             </div>
         </div>
     )
