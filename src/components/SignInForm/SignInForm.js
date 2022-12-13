@@ -5,7 +5,7 @@ const SignInForm = (props) => {
     return (
         <div className="container">
             <form className="signInForm" onSubmit={(e) => props.submitSignIn(e)}>
-                <label onClick={props.submitSignIn} htmlFor="login">Login</label>
+                <label htmlFor="login">Login</label>
                 <input 
                     className="input" 
                     id="login" 

@@ -11,7 +11,8 @@ const SignUpForm = (props) => {
         <div className='container'>
             <form className='signUpForm' onSubmit={(e) => props.submitSignUp(props.signUpForm, e)}>
                 <label htmlFor='login'>Login</label>
-                <input className='input margInp' id='login' autoComplete='off' type="text" value={props.signUpForm.login} onChange={(e) => props.setValue(e, 'login')} />
+                <input className='input' id='login' autoComplete='off' type="text" value={props.signUpForm.login} onChange={(e) => props.setValue(e, 'login')} />
+                <div className="underText margInp">{props.busyLogin}</div>
                 <InputPassword
                     signUpForm={props.signUpForm}
                     setValue={props.setValue}
@@ -19,7 +20,7 @@ const SignUpForm = (props) => {
                 />
                 <label htmlFor='confirmPass'>Confirm password</label>
                 <input className='input' id='confirmPass' type="password" value={props.signUpForm.confirmPass} onChange={(e) => props.setValue(e, 'confirmPass')} />
-                <div className="underText passmatch">{props.passmatch}</div>
+                <div className="underText">{props.passmatch}</div>
                 <InputTel 
                     signUpForm={props.signUpForm}
                     setValue={props.setValue}

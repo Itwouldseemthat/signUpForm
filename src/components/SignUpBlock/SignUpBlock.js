@@ -31,6 +31,18 @@ const SignUpBlock = (props) => {
         }
     }, [signUpForm])
 
+    const [busyLogin, setBusyLogin] = useState('')
+
+    useEffect(() => {
+        setBusyLogin('');
+        props.dataAccounts.forEach(item => {
+            if (item.login === signUpForm.login) {
+                setSubmitDisabled(true);
+                setBusyLogin('user with this login already exists')
+            }
+        })
+    },[signUpForm])
+
 
     const [passmatch, setPassmatch] = useState('')
 
@@ -119,7 +131,7 @@ const SignUpBlock = (props) => {
                 setIncorrectNum('this number is already being used');
             }
         })
-    },[signUpForm.tel])
+    },[signUpForm])
 
     const [space, setSpace] = useState('')
 
@@ -147,8 +159,9 @@ const SignUpBlock = (props) => {
                     passLevel={passLevel}
                     incorrectNum={incorrectNum}
                     space={space}
+                    busyLogin={busyLogin}
                 />
-                <SideButtons clickSignIn={props.clickSignIn}/>
+                <SideButtons goToPage={props.goToPage}/>
             </div>
         </div>
     )

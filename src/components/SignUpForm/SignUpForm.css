@@ -23,11 +23,10 @@ label {
     margin-top: 5px;
     margin-bottom: 10px;
     height: 19px;
+    color: red;
 }
 
-.passmatch {
-    color: rgb(191, 0, 0);
-}
+
 
 .showPass {
     position: absolute;
@@ -101,5 +100,4 @@ ul, li {
 .space {
     display: flex;
     justify-content: center;
-    color: red;
 }

@@ -43,7 +43,7 @@ const SignInBlock = (props) => {
            }
         })
         if (acc.login === signInForm.login && acc.password === signInForm.password) {
-            props.clickLogin();
+            props.goToPage('account');
         }
         if (acc.login !== signInForm.login) {
             setUnderText({
@@ -72,14 +72,14 @@ const SignInBlock = (props) => {
         <div className="signUp">
             <div className="wrapper">
                 <SignInForm
-                    clickLogin={props.clickLogin}
+                    goToPage={props.goToPage}
                     signInForm={signInForm} 
                     setValue={setValue}
                     signInDisabled={signInDisabled}
                     submitSignIn={submitSignIn}
                     underText={underText}
                 />
-                <SideBtnSignIn clickSignUp={props.clickSignUp}/>
+                <SideBtnSignIn goToPage={props.goToPage}/>
             </div>
         </div>
     )

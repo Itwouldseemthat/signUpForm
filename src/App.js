@@ -8,16 +8,8 @@ function App() {
 
   const [whatToShow, setWhaToShow] = useState('signIn');
 
-  function clickSignIn() {
-    setWhaToShow('signIn')
-  }
-
-  function clickSignUp() {
-    setWhaToShow('signUp')
-  }
-
-  function clickLogin() {
-    setWhaToShow('account')
+  function goToPage(page) {
+    setWhaToShow(page)
   }
 
   const [dataAccounts, setDataAccounts] = useState([])
@@ -32,29 +24,40 @@ function App() {
 
   const [account, setAccount] = useState({})
 
+  const signUpBlock = (
+    <SignUpBlock
+      goToPage={goToPage}
+      submitSignUp={submitSignUp} 
+      dataAccounts={dataAccounts}
+    /> 
+  )
+
+  const signInBlock = (
+    <SignInBlock
+      goToPage={goToPage}
+      dataAccounts={dataAccounts}
+      setAccount={setAccount}
+      account={account}
+    />
+  )
+
+  const accountBlock = (
+    <AccountBlock 
+      goToPage={goToPage}
+      account={account}
+    />
+  )
+
+  const whatToShowBlocksMap = {
+    signUp: signUpBlock,
+    signIn: signInBlock,
+    account: accountBlock,
+  }
+
   return (
     <div className="app">
       {
-        whatToShow === 'signUp' ? 
-        <SignUpBlock
-          clickSignIn={clickSignIn}
-          submitSignUp={submitSignUp} 
-          dataAccounts={dataAccounts}
-        /> 
-        : 
-        whatToShow === 'signIn' ?
-        <SignInBlock
-          clickLogin={clickLogin}
-          clickSignUp={clickSignUp}
-          dataAccounts={dataAccounts}
-          setAccount={setAccount}
-          account={account}
-        />
-        :
-        <AccountBlock 
-          clickSignIn={clickSignIn}
-          account={account}
-        />
+        whatToShowBlocksMap[whatToShow]
       }
     </div>
   );
