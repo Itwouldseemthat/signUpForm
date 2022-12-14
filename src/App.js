@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import AccountBlock from './components/AccountBlock/AccountBlock';
+import ForgotPassBlock from './components/ForgotPassBlock/ForgotPassBlock';
 import SignInBlock from './components/SignInBlock/SignInBlock';
 import SignUpBlock from './components/SignUpBlock/SignUpBlock';
 
@@ -48,10 +49,19 @@ function App() {
     />
   )
 
+  const forgotPassBlock = (
+    <ForgotPassBlock 
+      dataAccounts={dataAccounts}
+      setDataAccounts={setDataAccounts}
+      goToPage={goToPage}
+    />
+  )
+
   const whatToShowBlocksMap = {
     signUp: signUpBlock,
     signIn: signInBlock,
     account: accountBlock,
+    forgotPass: forgotPassBlock,
   }
 
   return (

@@ -1,0 +1,65 @@
+.padd {
+    /* padding: 30px; */
+    width: 766px;
+    height: 259px;
+    position: relative;
+    bottom: 65px;
+}
+
+.phoneFormWrapp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.phoneForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    border-left: 2px solid rgb(27, 80, 61);
+
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.applyBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 18px;
+    padding: 10px 20px;
+    background: rgb(34, 100, 76);
+    border: none;
+    outline: none;
+    box-shadow: 4px 4px 8px 0px rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+.applyBtn:not(:disabled):hover {
+    background: rgb(72, 120, 94);
+    cursor: pointer;
+}
+
+.applyBtn:disabled {
+    cursor: not-allowed;
+}
+
+.passForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 30px 30px 30px;
+    border-left: 2px solid rgb(27, 80, 61);
+}
+
+.passInputs {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 10px;
+}

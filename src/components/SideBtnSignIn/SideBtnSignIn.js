@@ -4,7 +4,7 @@ import './SideBtnSignIn.css';
 const SideBtnSignIn = (props) => {
     return (
         <div className='sideBtnsWrapp'>
-            <button className='sideBtns'>Forgot pass?</button>
+            <button className='sideBtns' onClick={() => props.goToPage('forgotPass')}>Forgot pass?</button>
             <button className='sideBtns' onClick={() => props.goToPage('signUp')}>Sign Up</button>
         </div>
     )
